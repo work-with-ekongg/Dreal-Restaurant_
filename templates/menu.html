@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreals Place - Menu</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>DREALS PLACE</li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/menu">MENU</a></li>
+                <li><a href="/contact">CONTACT</a></li>     
+
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="menu">
+    <h2>Our Signature Dishes</h2>
+    <div class="menu-grid">
+        {% for item in menu %}
+        <div class="menu-card">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <span>${{ item.price }}</span>
+            <button>
+                <a href="/check_out">ORDER NOW</a>
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+</body>
+</html>
